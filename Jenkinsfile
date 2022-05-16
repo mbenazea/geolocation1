@@ -24,12 +24,6 @@ pipeline {
                 sleep 5
             }
         }
-        stage('Test') {
-            steps {
-                echo 'Test'
-                sleep 5
-           }
-        }
         stage('Deloy') {
             steps {
                 echo 'Deploy'
