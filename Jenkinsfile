@@ -1,5 +1,4 @@
 pipeline {
-
    triggers {
        pollSCM('* * * * *')
     } 
@@ -7,22 +6,18 @@ pipeline {
     tools {
         maven 'M2_HOME'
     }
-
-
     stages {
         stage('maven package') {
             steps {
                 sh 'mvn clean'
                 sh 'mvn install'
-                sh 'mvn package'
-                
+                sh 'mvn package'               
             }
         }
         stage('Test') {
             steps {
                  sh 'mvn test'
-                 
-            }
+                 }
         }
         stage('Deloy') {
             steps {
