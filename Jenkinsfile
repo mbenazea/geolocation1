@@ -26,8 +26,7 @@ pipeline {
         }
         stage('Docker') {
             steps {
-                echo 'Docker step'
-               
+                echo 'Docker step'             
             }
         }
     }
