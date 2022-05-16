@@ -1,7 +1,7 @@
 pipeline {
 
    triggers {
-       pollSCM('* * * * * ')
+       pollSCM('* * * * *')
     } 
    agent any
     tools {
@@ -21,19 +21,19 @@ pipeline {
         stage('Test') {
             steps {
                  sh 'mvn test'
-                sleep 5
+                 
             }
         }
         stage('Deloy') {
             steps {
                 echo 'Deploy'
-                sleep 5
+                
             }
         }
         stage('Docker') {
             steps {
                 echo 'Docker step'
-                sleep 5
+               
             }
         }
     }
