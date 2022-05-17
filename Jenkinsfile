@@ -11,7 +11,6 @@ pipeline {
             steps {
                 sh 'mvn clean'
                 sh 'mvn install'
- marc-jenkinsfile
                 sh 'mvn package'               
             }
         }
@@ -27,7 +26,6 @@ pipeline {
             steps {
                  sh 'mvn test'   
             }
- main
         }
         stage('Deloy') {
             steps {
