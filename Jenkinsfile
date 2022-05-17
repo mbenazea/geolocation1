@@ -11,6 +11,7 @@ pipeline {
             steps {
                 sh 'mvn clean'
                 sh 'mvn install'
+ marc-jenkinsfile
                 sh 'mvn package'               
             }
         }
@@ -18,17 +19,24 @@ pipeline {
             steps {
                  sh 'mvn test'
                  }
+
+                sh 'mvn package'
+               }
+        }
+        stage('Test') {
+            steps {
+                 sh 'mvn test'   
+            }
+ main
         }
         stage('Deloy') {
             steps {
-                echo 'Deploy'
-                
+                echo 'Deploy'       
             }
         }
         stage('Docker') {
             steps {
-                echo 'Docker step'
-               
+                echo 'Docker step'             
             }
         }
     }
